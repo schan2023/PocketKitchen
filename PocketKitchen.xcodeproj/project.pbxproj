@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */; };
+		FCC716DE20FD3FF800ADFCAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC716DD20FD3FF800ADFCAD /* ViewController.swift */; };
+		FCC716E120FD3FF800ADFCAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC716DF20FD3FF800ADFCAD /* Main.storyboard */; };
+		FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCC716E220FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld */; };
+		FCC716E620FD3FFC00ADFCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC716E520FD3FFC00ADFCAD /* Assets.xcassets */; };
+		FCC716E920FD3FFC00ADFCAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC716E720FD3FFC00ADFCAD /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FCC716D820FD3FF800ADFCAD /* PocketKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCC716DD20FD3FF800ADFCAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCC716E020FD3FF800ADFCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCC716E320FD3FF800ADFCAD /* PocketKitchen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PocketKitchen.xcdatamodel; sourceTree = "<group>"; };
+		FCC716E520FD3FFC00ADFCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCC716E820FD3FFC00ADFCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCC716EA20FD3FFC00ADFCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCC716D520FD3FF800ADFCAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCC716CF20FD3FF800ADFCAD = {
+			isa = PBXGroup;
+			children = (
+				FCC716DA20FD3FF800ADFCAD /* PocketKitchen */,
+				FCC716D920FD3FF800ADFCAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCC716D920FD3FF800ADFCAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCC716D820FD3FF800ADFCAD /* PocketKitchen.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCC716DA20FD3FF800ADFCAD /* PocketKitchen */ = {
+			isa = PBXGroup;
+			children = (
+				FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */,
+				FCC716DD20FD3FF800ADFCAD /* ViewController.swift */,
+				FCC716DF20FD3FF800ADFCAD /* Main.storyboard */,
+				FCC716E520FD3FFC00ADFCAD /* Assets.xcassets */,
+				FCC716E720FD3FFC00ADFCAD /* LaunchScreen.storyboard */,
+				FCC716EA20FD3FFC00ADFCAD /* Info.plist */,
+				FCC716E220FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld */,
+			);
+			path = PocketKitchen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCC716D720FD3FF800ADFCAD /* PocketKitchen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCC716ED20FD3FFC00ADFCAD /* Build configuration list for PBXNativeTarget "PocketKitchen" */;
+			buildPhases = (
+				FCC716D420FD3FF800ADFCAD /* Sources */,
+				FCC716D520FD3FF800ADFCAD /* Frameworks */,
+				FCC716D620FD3FF800ADFCAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PocketKitchen;
+			productName = PocketKitchen;
+			productReference = FCC716D820FD3FF800ADFCAD /* PocketKitchen.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCC716D020FD3FF800ADFCAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Simone Chan";
+				TargetAttributes = {
+					FCC716D720FD3FF800ADFCAD = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = FCC716D320FD3FF800ADFCAD /* Build configuration list for PBXProject "PocketKitchen" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCC716CF20FD3FF800ADFCAD;
+			productRefGroup = FCC716D920FD3FF800ADFCAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCC716D720FD3FF800ADFCAD /* PocketKitchen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCC716D620FD3FF800ADFCAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCC716E920FD3FFC00ADFCAD /* LaunchScreen.storyboard in Resources */,
+				FCC716E620FD3FFC00ADFCAD /* Assets.xcassets in Resources */,
+				FCC716E120FD3FF800ADFCAD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCC716D420FD3FF800ADFCAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCC716DE20FD3FF800ADFCAD /* ViewController.swift in Sources */,
+				FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */,
+				FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FCC716DF20FD3FF800ADFCAD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCC716E020FD3FF800ADFCAD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCC716E720FD3FFC00ADFCAD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCC716E820FD3FFC00ADFCAD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCC716EB20FD3FFC00ADFCAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCC716EC20FD3FFC00ADFCAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCC716EE20FD3FFC00ADFCAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96FN5M759B;
+				INFOPLIST_FILE = PocketKitchen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MakeSchool.PocketKitchen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCC716EF20FD3FFC00ADFCAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96FN5M759B;
+				INFOPLIST_FILE = PocketKitchen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MakeSchool.PocketKitchen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCC716D320FD3FF800ADFCAD /* Build configuration list for PBXProject "PocketKitchen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCC716EB20FD3FFC00ADFCAD /* Debug */,
+				FCC716EC20FD3FFC00ADFCAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCC716ED20FD3FFC00ADFCAD /* Build configuration list for PBXNativeTarget "PocketKitchen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCC716EE20FD3FFC00ADFCAD /* Debug */,
+				FCC716EF20FD3FFC00ADFCAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCC716E220FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCC716E320FD3FF800ADFCAD /* PocketKitchen.xcdatamodel */,
+			);
+			currentVersion = FCC716E320FD3FF800ADFCAD /* PocketKitchen.xcdatamodel */;
+			path = PocketKitchen.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FCC716D020FD3FF800ADFCAD /* Project object */;
+}
