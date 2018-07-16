@@ -2,21 +2,26 @@
 This application will find recipes based on the contents of your pantry.
 ​
 ## Audience
-[Who cares/uses it? why?]
+People who want to cook with whatever is in their pantry.
 ​
 ## Experience
-A user opens the app... [complete this thought]
+A user opens the app and is delivered to the recipe homepage. The user will be prompted to input ingredients of their pantry, and a search will be done to display recipes that contain those ingredients. There will be a search history tab view and a favorites tab view.
 ​
 # Technical
 ## Models
-[What data are we dealing with? What classes will we create for that data?]
+`Recipe.swift`
 ​
 ## Views
-[What custom views do we need to create? Include pictures of your prototypes/sketches!]
+`ListRecipeTableViewCell.swift`
 ​
 ## Controllers
-[What controllers will we need? What will they do?]
+> `DisplayRecipeViewController.swift` - displays title of recipe, ingredients, and directions
+> `RecipeSearchViewController.swift` - prompts user to input ingredients
+> `ListOfRecipesViewController.swift` - displays recipes results
+> `HistoryViewController.swift` - displays recently searched recipes
+> `FavoritesViewController.swift` - displays favorited recipes
 ​
 ## Other
-[Any other frameworks / things we will need? Helpers? Services?]
+> AlamoFire
+> SwiftyJSON
 ​
