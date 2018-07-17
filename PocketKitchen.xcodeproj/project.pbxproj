@@ -14,6 +14,9 @@
 		FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCC716E220FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld */; };
 		FCC716E620FD3FFC00ADFCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC716E520FD3FFC00ADFCAD /* Assets.xcassets */; };
 		FCC716E920FD3FFC00ADFCAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC716E720FD3FFC00ADFCAD /* LaunchScreen.storyboard */; };
+		FCC7170820FD5ADA00ADFCAD /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC7170720FD5ADA00ADFCAD /* RecipeTableViewCell.swift */; };
+		FCC7170920FD62B300ADFCAD /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC7170220FD572000ADFCAD /* History.storyboard */; };
+		FCC7170C20FD66E600ADFCAD /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC7170B20FD66E600ADFCAD /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		FCC716E520FD3FFC00ADFCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCC716E820FD3FFC00ADFCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCC716EA20FD3FFC00ADFCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCC7170320FD572000ADFCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/History.storyboard; sourceTree = "<group>"; };
+		FCC7170720FD5ADA00ADFCAD /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		FCC7170B20FD66E600ADFCAD /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +86,9 @@
 		FCC716DA20FD3FF800ADFCAD /* PocketKitchen */ = {
 			isa = PBXGroup;
 			children = (
+				FCC7170A20FD66D300ADFCAD /* Controllers */,
 				FCC716F420FD428D00ADFCAD /* Storyboards */,
 				FCC716F320FD427800ADFCAD /* Services */,
-				FCC716F220FD426E00ADFCAD /* Controllers */,
 				FCC716F120FD426100ADFCAD /* Views */,
 				FCC716F020FD425A00ADFCAD /* Models */,
 				FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */,
@@ -105,15 +111,9 @@
 		FCC716F120FD426100ADFCAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FCC7170720FD5ADA00ADFCAD /* RecipeTableViewCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		FCC716F220FD426E00ADFCAD /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FCC716F320FD427800ADFCAD /* Services */ = {
@@ -127,8 +127,17 @@
 			isa = PBXGroup;
 			children = (
 				FCC716DF20FD3FF800ADFCAD /* Main.storyboard */,
+				FCC7170220FD572000ADFCAD /* History.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FCC7170A20FD66D300ADFCAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCC7170B20FD66E600ADFCAD /* HistoryViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC7170920FD62B300ADFCAD /* History.storyboard in Resources */,
 				FCC716E920FD3FFC00ADFCAD /* LaunchScreen.storyboard in Resources */,
 				FCC716E620FD3FFC00ADFCAD /* Assets.xcassets in Resources */,
 				FCC716E120FD3FF800ADFCAD /* Main.storyboard in Resources */,
@@ -248,6 +258,8 @@
 				FCC716DE20FD3FF800ADFCAD /* ViewController.swift in Sources */,
 				FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */,
 				FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */,
+				FCC7170C20FD66E600ADFCAD /* HistoryViewController.swift in Sources */,
+				FCC7170820FD5ADA00ADFCAD /* RecipeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +280,14 @@
 				FCC716E820FD3FFC00ADFCAD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FCC7170220FD572000ADFCAD /* History.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCC7170320FD572000ADFCAD /* Base */,
+			);
+			name = History.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
