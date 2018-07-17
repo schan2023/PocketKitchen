@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
+=======
+		62C381EF20FD550500AB77AC /* RecipeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C381EE20FD550500AB77AC /* RecipeSearchViewController.swift */; };
+		62C381F320FD56BE00AB77AC /* RecipeSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C381F220FD56BE00AB77AC /* RecipeSearch.storyboard */; };
+		62C381F520FD63E400AB77AC /* ListIngredientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C381F420FD63E400AB77AC /* ListIngredientsTableView.swift */; };
+>>>>>>> Stashed changes
 		EF98328050C57A546C6560CC /* Pods_PocketKitchen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C26FB28D5DE429AB503BD4 /* Pods_PocketKitchen.framework */; };
 		FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */; };
 		FCC716DE20FD3FF800ADFCAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC716DD20FD3FF800ADFCAD /* ViewController.swift */; };
@@ -23,6 +29,12 @@
 		2DDC81B64B16BD13686935F9 /* Pods-PocketKitchen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketKitchen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PocketKitchen/Pods-PocketKitchen.debug.xcconfig"; sourceTree = "<group>"; };
 		42C26FB28D5DE429AB503BD4 /* Pods_PocketKitchen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketKitchen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		496C71698CB13C0087F41FE9 /* Pods-PocketKitchen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketKitchen.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketKitchen/Pods-PocketKitchen.release.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		62C381EE20FD550500AB77AC /* RecipeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchViewController.swift; sourceTree = SOURCE_ROOT; };
+		62C381F220FD56BE00AB77AC /* RecipeSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RecipeSearch.storyboard; sourceTree = "<group>"; };
+		62C381F420FD63E400AB77AC /* ListIngredientsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListIngredientsTableView.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		FCC716D820FD3FF800ADFCAD /* PocketKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC716DD20FD3FF800ADFCAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +128,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
+=======
+		FCC716F220FD426E00ADFCAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				62C381EE20FD550500AB77AC /* RecipeSearchViewController.swift */,
+				62C381F420FD63E400AB77AC /* ListIngredientsTableView.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+>>>>>>> Stashed changes
 		FCC716F320FD427800ADFCAD /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +281,10 @@
 			files = (
 				FCC716DE20FD3FF800ADFCAD /* ViewController.swift in Sources */,
 				FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */,
+<<<<<<< Updated upstream
+=======
+				62C381F520FD63E400AB77AC /* ListIngredientsTableView.swift in Sources */,
+>>>>>>> Stashed changes
 				FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */,
 				FCC7170C20FD66E600ADFCAD /* HistoryViewController.swift in Sources */,
 				FCC7170820FD5ADA00ADFCAD /* RecipeTableViewCell.swift in Sources */,
