@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62C381F520FD63E400AB77AC /* ListIngredientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C381F420FD63E400AB77AC /* ListIngredientsTableView.swift */; };
 		EF98328050C57A546C6560CC /* Pods_PocketKitchen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C26FB28D5DE429AB503BD4 /* Pods_PocketKitchen.framework */; };
 		FC2E206620FEA91500FECFB4 /* ListIngredientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E206520FEA91500FECFB4 /* ListIngredientsTableView.swift */; };
 		FC2E206820FEAC8A00FECFB4 /* RecipeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E206720FEAC8A00FECFB4 /* RecipeSearchViewController.swift */; };
@@ -274,7 +273,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */,
-				62C381F520FD63E400AB77AC /* ListIngredientsTableView.swift in Sources */,
 				FC2E206820FEAC8A00FECFB4 /* RecipeSearchViewController.swift in Sources */,
 				FC2E206620FEA91500FECFB4 /* ListIngredientsTableView.swift in Sources */,
 				FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */,
