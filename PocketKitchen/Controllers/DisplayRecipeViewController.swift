@@ -11,6 +11,9 @@ import UIKit
 
 class DisplayRecipeViewController: UIViewController {
     
-    
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var ingredientsTextView: UITextView!
+    @IBOutlet weak var directionsTextView: UITextView!
 }
 

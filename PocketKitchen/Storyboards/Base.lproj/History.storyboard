@@ -104,7 +104,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKG-Vx-8yQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKG-Vx-8yQ">
                                 <rect key="frame" x="124" y="79" width="127" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -173,6 +173,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aMw-f7-UAz"/>
                     </view>
+                    <connections>
+                        <outlet property="directionsTextView" destination="xIz-Bh-HEd" id="a0E-JQ-kwx"/>
+                        <outlet property="ingredientsTextView" destination="uSM-qx-hs1" id="DAI-3r-3gT"/>
+                        <outlet property="recipeImage" destination="gcY-4M-nhG" id="cHw-3k-np4"/>
+                        <outlet property="recipeNameLabel" destination="hKG-Vx-8yQ" id="MF0-Or-0Oz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0m-58-W2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
