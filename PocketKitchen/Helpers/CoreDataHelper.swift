@@ -26,25 +26,30 @@ struct CoreDataHelper {
         
         return recipe
     }
+    static func saveRecipe() {
+        do {
+            try context.save()
+        } catch let error {
+            print("Could not save \(error.localizedDescription)")
+        }
+    }
     
-//    static func saveRecipe() {
-//        do {
-//            try context.save()
-//        } catch let error {
-//            print("Could not save \(error.localizedDescription)")
-//        }
-//    }
-//    
-//    static func retrieveRecipes() -> [Recipe] {
-//        do {
-//            //Retrieves core data and sorts it by date
-//            let fetchRequest = NSFetchRequest<Recipe>(entityName: "Recipe")
-//            let results = try context.fetch(fetchRequest)
-//            return results
-//        }
-//        catch let error {
-//            print("Could not fetch results")
-//            return []
-//        }
-//    }
+    static func deleteRecipe(recipe:Recipe){
+        context.delete(recipe)
+        saveRecipe()
+    }
+
+
+    static func retrieveRecipes() -> [Recipe] {
+        do {
+            //Retrieves core data and sorts it by date
+            let fetchRequest = NSFetchRequest<Recipe>(entityName: "Recipe")
+            let results = try context.fetch(fetchRequest)
+            return results
+        }
+        catch let error {
+            print("Could not fetch results")
+            return []
+        }
+    }
 }

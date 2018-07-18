@@ -11,42 +11,65 @@ import UIKit
 
 class FavoritesViewController: UITableViewController {
     
-    var recipesClicked = [Recipe]() {
+    
+    var favoritedRecipes = [Recipe]() {
         didSet {
             tableView.reloadData()
         }
+    }
+
+    @IBAction func likeButtonTappedFavoritesBoard(_ sender: Any) {
+        print("yay im on the favorites board")
+        hitLike()
+    }
+    func hitLike(){
+        print("in favorites view controller.. going to core data helper to save recipe")
+        //print(favoritedRecipes)
+        
+        
+        let recipe1 = CoreDataHelper.newRecipe()
+        recipe1.name = "Elaina"
+        recipe1.ingredients = "1.) Tomato"
+        favoritedRecipes.append(recipe1)
+        
+
     }
     
     func testFunc() {
         let recipe1 = CoreDataHelper.newRecipe()
         recipe1.name = "Spinach Cheddar Soup"
         recipe1.ingredients = "1.) Spinach 2.) Cheddar 3.) Broth"
-        
+
         let recipe2 = CoreDataHelper.newRecipe()
         recipe2.name = "Banh Mi"
         recipe2.ingredients = "1.) Bread 2.) carrots"
-        
-        
-        recipesClicked.append(recipe1)
-        recipesClicked.append(recipe2)
-        
-        print(recipesClicked)
+
+        let recipe3 = CoreDataHelper.newRecipe()
+        recipe3.name = "Elaina's amazing sandwich"
+        recipe3.ingredients = "1.) Bread 2.) Arugula 3). Turkey"
+
+
+        favoritedRecipes.append(recipe1)
+        favoritedRecipes.append(recipe2)
+        favoritedRecipes.append(recipe3)
+        print(favoritedRecipes)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         testFunc()
-        //        recipesClicked = CoreDataHelper.retrieveRecipes()
+        //favoritedRecipes = CoreDataHelper.retrieveRecipes()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int ) -> Int {
-        return recipesClicked.count
+        return favoritedRecipes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         
-        let recipe = recipesClicked[indexPath.row]
+        let recipe = favoritedRecipes[indexPath.row]
         cell.recipeTitleLabel.text = recipe.name
         
         //        cell.recipeTitleLabel.text = "Recipe 1"
@@ -59,7 +82,7 @@ class FavoritesViewController: UITableViewController {
         guard let identifier = segue.identifier else { return }
         if identifier == "displayRecipe" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let recipe = recipesClicked[indexPath.row]
+            let recipe = favoritedRecipes[indexPath.row]
             let destination = segue.destination as! DisplayRecipeViewController
             destination.recipe = recipe //var note: Note?
             
@@ -68,6 +91,12 @@ class FavoritesViewController: UITableViewController {
             //Check for duplicates in array before appending
             //            recipesClicked.append(recipe)
         }
+//        else if identifier == "likeButtonTappedHistoryBoard"{
+//            print("likeButtonTappedHistoryBoard was tapppppped!!")
+//        }
     }
+    
+    
+    
     
 }

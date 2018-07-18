@@ -16,6 +16,12 @@ class HistoryViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+
+    @IBAction func likeButtonTappedHistoryBoard(_ sender: Any) {
+        print("im on the history board")
+        FavoritesViewController().hitLike()
+        
+    }
     
     func testFunc() {
         let recipe1 = CoreDataHelper.newRecipe()
@@ -29,8 +35,6 @@ class HistoryViewController: UITableViewController {
         
         recipesClicked.append(recipe1)
         recipesClicked.append(recipe2)
-        
-        print(recipesClicked)
     }
     
     override func viewDidLoad() {
@@ -56,8 +60,10 @@ class HistoryViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("in prepare function")
         guard let identifier = segue.identifier else { return }
         if identifier == "displayRecipe" {
+            print("identifier equals displayRecipe")
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let recipe = recipesClicked[indexPath.row]
             let destination = segue.destination as! DisplayRecipeViewController

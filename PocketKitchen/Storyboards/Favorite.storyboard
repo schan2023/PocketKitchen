@@ -83,6 +83,9 @@
                                             <rect key="frame" x="329" y="11" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Like"/>
+                                            <connections>
+                                                <action selector="likeButtonTappedFavoritesBoard:" destination="R62-x7-p3S" eventType="touchUpInside" id="WMW-KD-2bS"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -107,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4GW-K0-3nV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1015" y="802"/>
+            <point key="canvasLocation" x="-1015.2" y="801.94902548725645"/>
         </scene>
         <!--Display Recipe View Controller-->
         <scene sceneID="Vki-Tt-gd3">

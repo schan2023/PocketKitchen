@@ -13,5 +13,7 @@ class RecipeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var recipeDescriptionLabel: UILabel!
+
+
     
 }

@@ -67,6 +67,9 @@
                                             <rect key="frame" x="329" y="11" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Like"/>
+                                            <connections>
+                                                <action selector="likeButtonTappedHistoryBoard:" destination="4jO-El-yVW" eventType="touchUpInside" id="Cfm-Hw-uks"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
