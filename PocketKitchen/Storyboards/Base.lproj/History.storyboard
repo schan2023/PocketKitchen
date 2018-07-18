@@ -158,9 +158,9 @@
                         <viewLayoutGuide key="safeArea" id="aMw-f7-UAz"/>
                     </view>
                     <connections>
-                        <outlet property="ingredientsTextView" destination="uSM-qx-hs1" id="DAI-3r-3gT"/>
-                        <outlet property="recipeImage" destination="gcY-4M-nhG" id="cHw-3k-np4"/>
-                        <outlet property="recipeNameLabel" destination="hKG-Vx-8yQ" id="MF0-Or-0Oz"/>
+                        <outlet property="ingredientsTextView" destination="uSM-qx-hs1" id="OJH-Bh-wc0"/>
+                        <outlet property="recipeImage" destination="gcY-4M-nhG" id="r4K-0K-V6b"/>
+                        <outlet property="recipeNameLabel" destination="hKG-Vx-8yQ" id="8ZB-AV-7dW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0m-58-W2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
