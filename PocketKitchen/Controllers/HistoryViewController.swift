@@ -42,10 +42,3 @@ class HistoryViewController: UITableViewController {
     }
     
 }
-
-func testFunc() {
-    var foodArray = ["chicken", "cheese"]
-    var foodVar = "chicken"
-    let apiToContact = "https://api.edamam.com/search?q=\(foodVar)&app_id=58964742&app_key=af5da5d1d5d239130b3a195bd566f6cd"
-    print(apiToContact)
-}
