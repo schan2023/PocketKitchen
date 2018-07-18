@@ -9,7 +9,6 @@
 import UIKit
 
 class RecipeSearchViewController: UIViewController {
-    
 
     var ingredientArray = [String]()
     
@@ -28,9 +27,9 @@ class RecipeSearchViewController: UIViewController {
         var destination = segue.destination as! RecipeListViewController
         //vc.finalIngredientList = self.ingredientArray
 //        let vc = RecipeListViewController(nibName: "RecipeListViewController", bundle: nil)
-        print("ingredientArray: \(ingredientArray)")
-        destination.finalIngredientList = ingredientArray
-        print("vc.finalIngredientList: \(destination.finalIngredientList)")
+//        print("ingredientArray: \(ingredientArray)")
+//        destination.finalIngredientList = ingredientArray
+//        print("vc.finalIngredientList: \(destination.finalIngredientList)")
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
