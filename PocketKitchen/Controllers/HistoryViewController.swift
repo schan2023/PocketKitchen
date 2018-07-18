@@ -11,12 +11,18 @@ import UIKit
 
 class HistoryViewController: UITableViewController {
     
+    var recipesClicked = [Recipe]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int ) -> Int {
-        return 5
+        return recipesClicked.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,6 +32,13 @@ class HistoryViewController: UITableViewController {
         cell.recipeDescriptionLabel.text = "This is the first recipe"
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == "displayRecipe" {
+            print("Transitioning to the Display Recipe View Controller")
+        }
     }
     
 }
