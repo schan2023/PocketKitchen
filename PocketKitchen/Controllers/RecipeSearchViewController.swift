@@ -21,6 +21,16 @@ class RecipeSearchViewController: UIViewController {
     
     // IB Actions
     @IBAction func searchButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "recipeToList", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destination = segue.destination as! RecipeListViewController
+        //vc.finalIngredientList = self.ingredientArray
+//        let vc = RecipeListViewController(nibName: "RecipeListViewController", bundle: nil)
+        print("ingredientArray: \(ingredientArray)")
+        destination.finalIngredientList = ingredientArray
+        print("vc.finalIngredientList: \(destination.finalIngredientList)")
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
