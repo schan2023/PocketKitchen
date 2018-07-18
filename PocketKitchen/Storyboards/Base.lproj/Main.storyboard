@@ -6,26 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites-->
-        <scene sceneID="v4u-hI-rSu">
-            <objects>
-                <viewController id="R62-x7-p3S" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="z7f-d3-pr2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="cF4-Cu-UHd"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Xs9-Hv-vb1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4GW-K0-3nV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-776" y="830"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bV8-qq-t0Y">
             <objects>
@@ -37,7 +20,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="XXe-nh-BOd" kind="relationship" relationship="viewControllers" id="n9n-Je-vD0"/>
-                        <segue destination="R62-x7-p3S" kind="relationship" relationship="viewControllers" id="RbN-ZJ-aT8"/>
+                        <segue destination="Eh5-4r-9T3" kind="relationship" relationship="viewControllers" id="RbN-ZJ-aT8"/>
                         <segue destination="8QV-ai-xIC" kind="relationship" relationship="viewControllers" id="jf8-OW-j7g"/>
                     </connections>
                 </tabBarController>
@@ -64,6 +47,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7z-f7-Cyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="636"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="oEH-MU-8SL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorite" id="Eh5-4r-9T3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="D02-UD-HqI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2J-Ag-o97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-776" y="830"/>
         </scene>
     </scenes>
 </document>
