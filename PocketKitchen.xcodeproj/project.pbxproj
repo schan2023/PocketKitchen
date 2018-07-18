@@ -13,6 +13,7 @@
 		FC2E206620FEA91500FECFB4 /* ListIngredientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E206520FEA91500FECFB4 /* ListIngredientsTableView.swift */; };
 		FC2E206820FEAC8A00FECFB4 /* RecipeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E206720FEAC8A00FECFB4 /* RecipeSearchViewController.swift */; };
 		FC2E206B20FEACA300FECFB4 /* RecipeSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2E206920FEACA300FECFB4 /* RecipeSearch.storyboard */; };
+		FC2E206E20FED82400FECFB4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E206D20FED82400FECFB4 /* CoreDataHelper.swift */; };
 		FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */; };
 		FCC716E120FD3FF800ADFCAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC716DF20FD3FF800ADFCAD /* Main.storyboard */; };
 		FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCC716E220FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		FC2E206520FEA91500FECFB4 /* ListIngredientsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListIngredientsTableView.swift; sourceTree = "<group>"; };
 		FC2E206720FEAC8A00FECFB4 /* RecipeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchViewController.swift; sourceTree = "<group>"; };
 		FC2E206A20FEACA300FECFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecipeSearch.storyboard; sourceTree = "<group>"; };
+		FC2E206D20FED82400FECFB4 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		FCC716D820FD3FF800ADFCAD /* PocketKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC716E020FD3FF800ADFCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		FC2E206C20FED81000FECFB4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC2E206D20FED82400FECFB4 /* CoreDataHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FCC716CF20FD3FF800ADFCAD = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		FCC716DA20FD3FF800ADFCAD /* PocketKitchen */ = {
 			isa = PBXGroup;
 			children = (
+				FC2E206C20FED81000FECFB4 /* Helpers */,
 				FCC7170A20FD66D300ADFCAD /* Controllers */,
 				FCC716F420FD428D00ADFCAD /* Storyboards */,
 				FCC716F320FD427800ADFCAD /* Services */,
@@ -280,6 +291,7 @@
 			files = (
 				FC2E205C20FE92A700FECFB4 /* DisplayRecipeViewController.swift in Sources */,
 				FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */,
+				FC2E206E20FED82400FECFB4 /* CoreDataHelper.swift in Sources */,
 				FC2E206820FEAC8A00FECFB4 /* RecipeSearchViewController.swift in Sources */,
 				FC2E206620FEA91500FECFB4 /* ListIngredientsTableView.swift in Sources */,
 				FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */,
