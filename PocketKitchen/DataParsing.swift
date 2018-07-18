@@ -17,10 +17,10 @@ struct Recipe {
     let imageURL: String
     
     init(json: JSON) {
-        self.recipeTitle = json["hits"]["recipe"]["label"].stringValue
-        self.ingredients = json["hits"]["recipe"]["ingredients"].stringValue
-        self.directionsURL = json["hits"]["recipe"]["url"].stringValue
-        self.imageURL = json["hits"]["recipe"]["url"].stringValue
+        self.recipeTitle = json["hits"][0]["recipe"]["label"].stringValue
+        self.ingredients = json["hits"][0]["recipe"]["ingredientLines"].stringValue
+        self.directionsURL = json["hits"][0]["recipe"]["url"].stringValue
+        self.imageURL = json["hits"][0]["recipe"]["image"].stringValue
     }
     
 }
