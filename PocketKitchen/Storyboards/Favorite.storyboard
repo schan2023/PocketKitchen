@@ -30,7 +30,7 @@
         <!--Favorites-->
         <scene sceneID="v4u-hI-rSu">
             <objects>
-                <viewController id="R62-x7-p3S" sceneMemberID="viewController">
+                <viewController id="R62-x7-p3S" customClass="FavoritesViewController" customModule="PocketKitchen" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dfL-1w-zUe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
