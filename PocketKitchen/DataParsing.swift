@@ -14,11 +14,13 @@ struct Recipe {
     let recipeTitle: String
     let ingredients: String
     let directionsURL: String
+    let imageURL: String
     
     init(json: JSON) {
         self.recipeTitle = json["hits"]["recipe"]["label"].stringValue
         self.ingredients = json["hits"]["recipe"]["ingredients"].stringValue
         self.directionsURL = json["hits"]["recipe"]["url"].stringValue
+        self.imageURL = json["hits"]["recipe"]["url"].stringValue
     }
     
 }
