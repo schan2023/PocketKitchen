@@ -11,7 +11,7 @@ import UIKit
 
 class DisplayRecipeViewController: UIViewController {
     
-    var recipe: Recipe?
+    var recipe: RecipeModel?
     
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
