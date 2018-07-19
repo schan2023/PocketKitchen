@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  RecipeListViewController.swift
 //  PocketKitchen
 //
 //  Created by Miguel Batilando on 7/17/18.
@@ -18,11 +18,11 @@ class RecipeListViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getRecipeData(food: ["chicken", "cheese"], completionHandler: handleRecipeModelData)
+        print("finalIngredientList: \(finalIngredientList)")
+        getRecipeData(food: finalIngredientList, completionHandler: handleRecipeModelData)
     }
     
     func getRecipeData(food: [String], completionHandler: @escaping ([RecipeModel]) -> Void) {
@@ -79,4 +79,5 @@ class RecipeListViewController: UITableViewController {
         
         return cell
     }
+
 }
