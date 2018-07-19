@@ -10,8 +10,11 @@ import UIKit
 
 class RecipeSearchViewController: UIViewController {
     
-
-    var ingredientArray = [String]()
+    var ingredientArray: [String] = [] {
+        didSet {
+            IngredientsTableView.reloadData()
+        }
+    }
     
     // IB Outlets
     @IBOutlet weak var ingredientInputTextField: UITextField!
@@ -22,12 +25,11 @@ class RecipeSearchViewController: UIViewController {
     // IB Actions
     @IBAction func searchButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "recipeToList", sender: self)
+        viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var destination = segue.destination as! RecipeListViewController
-        //vc.finalIngredientList = self.ingredientArray
-//        let vc = RecipeListViewController(nibName: "RecipeListViewController", bundle: nil)
         print("ingredientArray: \(ingredientArray)")
         destination.finalIngredientList = ingredientArray
         print("vc.finalIngredientList: \(destination.finalIngredientList)")
@@ -37,6 +39,8 @@ class RecipeSearchViewController: UIViewController {
         let ingredient = ingredientInputTextField.text
         ingredientArray.append(ingredient!)
         print(ingredientArray)
+        let ingredientTableView = ListIngredientsTableView()
+        ingredientTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -45,7 +49,6 @@ class RecipeSearchViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
@@ -57,8 +60,10 @@ extension RecipeSearchViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
-        cell.textLabel?.text = String(ingredientArray[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath) as! IngredientTableViewCell
+        let ingredient = ingredientArray[indexPath.row]
+        print(ingredient)
+        cell.ingredientLabel.text = ingredient
         return cell
     }
     
