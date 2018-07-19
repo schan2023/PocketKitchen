@@ -43,6 +43,7 @@ class RecipeSearchViewController: UIViewController {
         print(ingredientArray)
         let ingredientTableView = ListIngredientsTableView()
         ingredientTableView.reloadData()
+        ingredientInputTextField.text = ""
     }
     
     @IBAction func clearButtonPressed(_ sender: Any) {
@@ -53,6 +54,9 @@ class RecipeSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     override func didReceiveMemoryWarning() {
