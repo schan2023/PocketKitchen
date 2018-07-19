@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cF4-Cu-UHd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Xs9-Hv-vb1"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" selectedImage="icons8-heart-outline-50" id="Xs9-Hv-vb1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4GW-K0-3nV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,4 +66,7 @@
             <point key="canvasLocation" x="140" y="636"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-heart-outline-50" width="50" height="50"/>
+    </resources>
 </document>
