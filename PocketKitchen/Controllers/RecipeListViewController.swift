@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class RecipeListViewController: UIViewController {
-    
+    var finalIngredientList = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

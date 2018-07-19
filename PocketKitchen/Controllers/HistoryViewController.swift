@@ -16,25 +16,25 @@ class HistoryViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-
-    @IBAction func likeButtonTappedHistoryBoard(_ sender: Any) {
-        print("im on the history board")
-        FavoritesViewController().hitLike()
-        
-    }
     
     func testFunc() {
         let recipe1 = CoreDataHelper.newRecipe()
-        recipe1.name = "Spinach Cheddar Soup"
+        recipe1.name = "Spinach  Soup"
         recipe1.ingredients = "1.) Spinach 2.) Cheddar 3.) Broth"
         
+        recipesClicked.append(recipe1)
+        
         let recipe2 = CoreDataHelper.newRecipe()
-        recipe2.name = "Banh Mi"
+        recipe2.name = " Mi"
         recipe2.ingredients = "1.) Bread 2.) carrots"
         
-        
-        recipesClicked.append(recipe1)
         recipesClicked.append(recipe2)
+        
+        let recipe3 = CoreDataHelper.newRecipe()
+        recipe3.name = "Elaina's sandwich"
+        recipe3.ingredients = "1.) Bread 2.) Arugula 3). Turkey"
+        
+        recipesClicked.append(recipe3)
     }
     
     override func viewDidLoad() {
@@ -51,7 +51,9 @@ class HistoryViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         
         let recipe = recipesClicked[indexPath.row]
-        cell.recipeTitleLabel.text = recipe.name
+        cell.recipe = recipe
+
+      //  cell.recipeTitleLabel.text = recipe.name
         
 //        cell.recipeTitleLabel.text = "Recipe 1"
 //        cell.recipeDescriptionLabel.text = "This is the first recipe"
@@ -60,7 +62,6 @@ class HistoryViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("in prepare function")
         guard let identifier = segue.identifier else { return }
         if identifier == "displayRecipe" {
             print("identifier equals displayRecipe")

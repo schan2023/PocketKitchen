@@ -10,7 +10,6 @@ import UIKit
 
 class RecipeSearchViewController: UIViewController {
     
-
     var ingredientArray = [String]()
     
     // IB Outlets

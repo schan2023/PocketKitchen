@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 struct CoreDataHelper {
+    
     static let context: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError()
@@ -26,6 +27,7 @@ struct CoreDataHelper {
         
         return recipe
     }
+    
     static func saveRecipe() {
         do {
             try context.save()
@@ -34,17 +36,26 @@ struct CoreDataHelper {
         }
     }
     
+    
     static func deleteRecipe(recipe:Recipe){
         context.delete(recipe)
         saveRecipe()
     }
 
 
-    static func retrieveRecipes() -> [Recipe] {
+    static func retrieveRecipes(type: String) -> [Recipe] {
         do {
-            //Retrieves core data and sorts it by date
+            //Retrieves core data and sorts it by isFavorited
+            print("coredata helper retrieve recipes method")
             let fetchRequest = NSFetchRequest<Recipe>(entityName: "Recipe")
+            let inputType: String = "history"
+            if inputType != type{
+                print("in the retrieveRecipes of tableview of favorites")
+                fetchRequest.predicate = NSPredicate(format: "isFavorited = %@", "yes")
+            }
             let results = try context.fetch(fetchRequest)
+            
+            print(results)
             return results
         }
         catch let error {

@@ -84,7 +84,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Like"/>
                                             <connections>
-                                                <action selector="likeButtonTappedFavoritesBoard:" destination="R62-x7-p3S" eventType="touchUpInside" id="WMW-KD-2bS"/>
+                                                <action selector="likeButtonTapped:" destination="x0D-0s-bSG" eventType="touchUpInside" id="4OZ-xn-JVf"/>
                                             </connections>
                                         </button>
                                     </subviews>

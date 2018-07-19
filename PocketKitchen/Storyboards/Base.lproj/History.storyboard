@@ -68,7 +68,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Like"/>
                                             <connections>
-                                                <action selector="likeButtonTappedHistoryBoard:" destination="4jO-El-yVW" eventType="touchUpInside" id="Cfm-Hw-uks"/>
+                                                <action selector="likeButtonTappedHistory:" destination="MSV-Ok-8vf" eventType="touchUpInside" id="x5J-qA-1iA"/>
                                             </connections>
                                         </button>
                                     </subviews>
