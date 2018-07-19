@@ -21,6 +21,7 @@ class RecipeSearchViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var IngredientsTableView: ListIngredientsTableView!
+    @IBOutlet weak var clearButton: UIButton!
     
     // IB Actions
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -43,6 +44,12 @@ class RecipeSearchViewController: UIViewController {
         let ingredientTableView = ListIngredientsTableView()
         ingredientTableView.reloadData()
     }
+    
+    @IBAction func clearButtonPressed(_ sender: Any) {
+        ingredientArray.removeAll()
+        print(ingredientArray)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

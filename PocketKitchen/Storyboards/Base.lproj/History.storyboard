@@ -91,6 +91,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="History" id="vpC-Rr-sfJ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWm-ia-kwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,9 +174,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9vy-Et-RP8" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xC8-Q3-I5w">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.82745098039999998" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
