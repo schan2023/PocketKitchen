@@ -15,6 +15,7 @@
 		FC2E206820FEAC8A00FECFB4 /* RecipeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E206720FEAC8A00FECFB4 /* RecipeSearchViewController.swift */; };
 		FC2E206B20FEACA300FECFB4 /* RecipeSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2E206920FEACA300FECFB4 /* RecipeSearch.storyboard */; };
 		FC2E206E20FED82400FECFB4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E206D20FED82400FECFB4 /* CoreDataHelper.swift */; };
+		FC2E207020FFB3B000FECFB4 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E206F20FFB3AF00FECFB4 /* RecipeModel.swift */; };
 		FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */; };
 		FCC716E120FD3FF800ADFCAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC716DF20FD3FF800ADFCAD /* Main.storyboard */; };
 		FCC716E420FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCC716E220FD3FF800ADFCAD /* PocketKitchen.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 		FC2E206720FEAC8A00FECFB4 /* RecipeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchViewController.swift; sourceTree = "<group>"; };
 		FC2E206A20FEACA300FECFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecipeSearch.storyboard; sourceTree = "<group>"; };
 		FC2E206D20FED82400FECFB4 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		FC2E206F20FFB3AF00FECFB4 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		FCC716D820FD3FF800ADFCAD /* PocketKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC716DB20FD3FF800ADFCAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC716E020FD3FF800ADFCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		FCC716F020FD425A00ADFCAD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC2E206F20FFB3AF00FECFB4 /* RecipeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				FC2E206620FEA91500FECFB4 /* ListIngredientsTableView.swift in Sources */,
 				FCC716DC20FD3FF800ADFCAD /* AppDelegate.swift in Sources */,
 				6271711120FEEAC50073FE9C /* RecipeListViewController.swift in Sources */,
+				FC2E207020FFB3B000FECFB4 /* RecipeModel.swift in Sources */,
 				FCC7170C20FD66E600ADFCAD /* HistoryViewController.swift in Sources */,
 				FCC7170820FD5ADA00ADFCAD /* RecipeTableViewCell.swift in Sources */,
 			);

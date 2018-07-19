@@ -13,21 +13,24 @@ import SwiftyJSON
 class RecipeListViewController: UITableViewController {
     
     var finalIngredientList = [String]()
-    var recipeTitle = [String]()
-    
+    var displayRecipesList = [RecipeModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("finalIngredientList: \(finalIngredientList)")
-        getRecipeData(food: finalIngredientList)
-        print(recipeTitle)
-        
+        getRecipeData(food: finalIngredientList, completionHandler: handleRecipeModelData)
     }
     
-    func getRecipeData(food: [String]) {
+    func getRecipeData(food: [String], completionHandler: @escaping ([RecipeModel]) -> Void) {
+        
+        var recipeResults: [RecipeModel] = []
         
         let foodVar = food.joined(separator: "+")
         let apiToContact = "http://api.edamam.com/search?q=\(foodVar)&app_id=58964742&app_key=af5da5d1d5d239130b3a195bd566f6cd"
-        
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
             case .success:
@@ -35,38 +38,46 @@ class RecipeListViewController: UITableViewController {
                     let json = JSON(value)
                     var index = 0
                     for food in json {
-                        // recipe title
-                        print(json["hits"][index]["recipe"]["label"].stringValue)
-                        self.recipeTitle.append(json["hits"][index]["recipe"]["label"].stringValue)
-                        // recipe ingredient lines
-                       // print(json["hits"][index]["recipe"]["ingredientLines"])
-                        // recipe directions url
-                       // print(json["hits"][index]["recipe"]["url"].stringValue)
-                        // recipe image url
-                        //print(json["hits"][index]["recipe"]["image"].stringValue)
+                        let recipeName = json["hits"][index]["recipe"]["label"].stringValue
+                        let ingredients = json["hits"][index]["recipe"]["ingredientLines"].stringValue
+                        let recipe = RecipeModel(name: recipeName, ingredients: [ingredients])
+                        
+//                        print(json["hits"][index]["recipe"]["label"].stringValue)
+//                        print(json["hits"][index]["recipe"]["ingredientLines"])
+//                        print(json["hits"][index]["recipe"]["url"].stringValue)
+//                        print(json["hits"][index]["recipe"]["image"].stringValue)
                         index = index + 1
-                        print("index: \(index)")
-                        //print("recipeTitleArray: \(self.recipeTitle)")
+//                        print("index: \(index)")
+                        
+                        recipeResults.append(recipe)
+//                        print(recipeResults)
                     }
+                    
                 }
             case .failure(let error):
                 print(error)
             }
+            
+             completionHandler(recipeResults)
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return finalIngredientList.count
+    func handleRecipeModelData(recipesList: [RecipeModel]) -> Void {
+        displayRecipesList = recipesList
+        //print(displayRecipesList)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int ) -> Int {
+        return displayRecipesList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTableViewCell", for: indexPath) as! RecipeTableViewCell
-        cell.recipeTitleLabel.text = finalIngredientList[indexPath.row]
+        
+        let recipe = displayRecipesList[indexPath.row]
+        cell.recipeTitleLabel.text = recipe.name
+        
         return cell
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTableViewCell", for: indexPath) as! RecipeTableViewCell
-//
-//        let recipe = recipesClicked[indexPath.row]
-//        cell.recipeTitleLabel.text = recipe.name
     }
-    
+
 }

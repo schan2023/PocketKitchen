@@ -33,6 +33,7 @@ class RecipeSearchViewController: UIViewController {
         print("ingredientArray: \(ingredientArray)")
         destination.finalIngredientList = ingredientArray
         print("vc.finalIngredientList: \(destination.finalIngredientList)")
+
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
