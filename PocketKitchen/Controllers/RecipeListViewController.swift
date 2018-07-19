@@ -79,5 +79,23 @@ class RecipeListViewController: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == "displayRecipe" {
+            
+            print("Going into displayRecipe segue")
+            
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let recipe = displayRecipesList[indexPath.row]
+            let destination = segue.destination as! DisplayRecipeViewController
+            destination.recipe = recipe //var note: Note?
+            
+            //Records if recipe was clicked
+            //            CoreDataHelper.saveRecipe()
+            //Check for duplicates in array before appending
+            //            recipesClicked.append(recipe)
+        }
+    }
 
 }
