@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AlamofireImage
+import Alamofire
 
 class DisplayRecipeViewController: UIViewController {
     
@@ -15,7 +17,8 @@ class DisplayRecipeViewController: UIViewController {
     
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
-    @IBOutlet weak var ingredientsTextView: UITextView!
+    @IBOutlet weak var ingredientTextLabel: UILabel!
+    @IBOutlet weak var directionsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +27,28 @@ class DisplayRecipeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let recipe = recipe {
+        if var recipe = recipe {
             recipeNameLabel.text = recipe.name
-            ingredientsTextView?.text = recipe.ingredients
+            print("recipes.ingredients: \(recipe.ingredients)")
+            // ingredientsTextView?.text = recipe.ingredients
+            ingredientTextLabel.text = recipe.ingredients
+            ingredientTextLabel.layer.borderWidth = 0.25
+            ingredientTextLabel.layer.borderColor = UIColor.black.cgColor
+            if let image = recipe.recipeUIImage {
+                 recipeImage.image = image
+            }
+            
         } else {
             recipeNameLabel.text = ""
-            ingredientsTextView.text = ""
+            // ingredientsTextView.text = ""
         }
     }
-
+    
+    @IBAction func directionsButtonPressed(_ sender: Any) {
+        let urlString = (recipe?.directions)!
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url, options: [:])
+        }
 }
 
+}
