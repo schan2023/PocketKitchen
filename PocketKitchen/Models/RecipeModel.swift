@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct RecipeModel {
     var name: String
@@ -14,6 +15,8 @@ struct RecipeModel {
     var foodImage: String
     var directions: String
     var calories: Int32
+    var recipeUIImage: UIImage?
+    var imageUrl: String? //
     
     init(name: String, ingredients: String, foodImage: String, directions: String, calories: Int32) {
         self.name = name

@@ -14,7 +14,6 @@ import AlamofireImage
 class RecipeListViewController: UITableViewController {
     
     @IBOutlet var recipeTableView: UITableView!
-    var urlImageArray = [String]()
     
     var finalIngredientList = [String]()
     var displayRecipesList = [RecipeModel]() {
@@ -25,7 +24,6 @@ class RecipeListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("finalIngredientList: \(finalIngredientList)")
         getRecipeData(food: finalIngredientList, completionHandler: handleRecipeModelData)
     }
     
@@ -52,8 +50,8 @@ class RecipeListViewController: UITableViewController {
                         let image = json["hits"][index]["recipe"]["image"].stringValue
                         let directions = json["hits"][index]["recipe"]["url"].stringValue
                         let calories = json["hits"][index+1]["recipe"]["calories"].int32Value
-                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: calories)
-                        self.urlImageArray.append(imageURL)
+                        var recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: calories)
+                        recipe.imageUrl = image
                         index = index + 1
                         recipeResults.append(recipe)
                     }
@@ -77,13 +75,13 @@ class RecipeListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         let recipe = displayRecipesList[indexPath.row]
-        let imageURL = urlImageArray[indexPath.row]
+        let imageURL = recipe.imageUrl
         cell.recipeTitleLabel.text = recipe.name
         let calorieStr = String(recipe.calories) + " calories"
         cell.recipeCalorieLabel.text = calorieStr
-        Alamofire.request(imageURL).responseImage { response in
+        Alamofire.request(imageURL!).responseImage { response in
             if let image = response.result.value {
-                print("image downloaded: \(image)")
+                self.displayRecipesList[indexPath.row].recipeUIImage = image
                 cell.foodImage.image = image
             }
         }
@@ -94,10 +92,6 @@ class RecipeListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         if identifier == "displayRecipe" {
-            
-            print("Going into displayRecipe segue")
-            
-            
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let recipe = displayRecipesList[indexPath.row]
             
@@ -105,9 +99,6 @@ class RecipeListViewController: UITableViewController {
             
             let destination = segue.destination as! DisplayRecipeViewController
             destination.recipe = recipeCoreData
-            
-//            createCoreDataObject(recipeModel: recipe)
-
         }
     }
     
@@ -120,7 +111,7 @@ class RecipeListViewController: UITableViewController {
         object.setValue(recipeModel.directions, forKey: "directions")
         object.setValue(recipeModel.calories, forKey: "calories")
         object.setValue("yes", forKey: "isClicked")
-        print("object created \(object)")
+        object.setValue(recipeModel.imageUrl, forKey: "imageUrl")
         
         //Save CoreDataModel
         CoreDataHelper.saveRecipe()
