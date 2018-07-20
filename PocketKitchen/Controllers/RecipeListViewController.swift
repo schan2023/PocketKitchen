@@ -39,15 +39,13 @@ class RecipeListViewController: UITableViewController {
                     var index = 0
                     for food in json {
                         let recipeName = json["hits"][index]["recipe"]["label"].stringValue
-                        let ingredients = json["hits"][index]["recipe"]["ingredientLines"].stringValue
-                        let recipe = RecipeModel(name: recipeName, ingredients: [ingredients])
+//                        let ingredients = json["hits"][index]["recipe"]["ingredientLines"].stringValue
+                        let image = json["hits"][index]["recipe"]["image"].stringValue
+                        let directions = json["hits"][index]["recipe"]["url"].stringValue
                         
-//                        print(json["hits"][index]["recipe"]["label"].stringValue)
-//                        print(json["hits"][index]["recipe"]["ingredientLines"])
-//                        print(json["hits"][index]["recipe"]["url"].stringValue)
-//                        print(json["hits"][index]["recipe"]["image"].stringValue)
+                        let recipe = RecipeModel(name: recipeName, ingredients: "hi", image: image, directions: directions)
+                        
                         index = index + 1
-//                        print("index: \(index)")
                         
                         recipeResults.append(recipe)
 //                        print(recipeResults)
