@@ -40,5 +40,7 @@ class RecipeTableViewCell: UITableViewCell {
         print("like button tapped in history")
         switchFavorite()
     }
+    @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet weak var recipeCalorieLabel: UILabel!
     
 }
