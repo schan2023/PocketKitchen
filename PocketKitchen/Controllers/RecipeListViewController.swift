@@ -50,8 +50,7 @@ class RecipeListViewController: UITableViewController {
                         let image = json["hits"][index]["recipe"]["image"].stringValue
                         let directions = json["hits"][index]["recipe"]["url"].stringValue
                         let calories = json["hits"][index+1]["recipe"]["calories"].int32Value
-                        var recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: calories)
-                        recipe.imageUrl = image
+                        var recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: calories, imageUrl: image)
                         index = index + 1
                         recipeResults.append(recipe)
                     }
@@ -79,7 +78,7 @@ class RecipeListViewController: UITableViewController {
         cell.recipeTitleLabel.text = recipe.name
         let calorieStr = String(recipe.calories) + " calories"
         cell.recipeCalorieLabel.text = calorieStr
-        Alamofire.request(imageURL!).responseImage { response in
+        Alamofire.request(imageURL).responseImage { response in
             if let image = response.result.value {
                 self.displayRecipesList[indexPath.row].recipeUIImage = image
                 cell.foodImage.image = image

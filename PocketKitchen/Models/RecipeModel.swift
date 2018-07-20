@@ -16,13 +16,14 @@ struct RecipeModel {
     var directions: String
     var calories: Int32
     var recipeUIImage: UIImage?
-    var imageUrl: String? //
+    var imageUrl: String
     
-    init(name: String, ingredients: String, foodImage: String, directions: String, calories: Int32) {
+    init(name: String, ingredients: String, foodImage: String, directions: String, calories: Int32, imageUrl: String) {
         self.name = name
         self.ingredients = ingredients
         self.foodImage = foodImage
         self.directions = directions
         self.calories = calories
+        self.imageUrl = imageUrl
     }
 }
