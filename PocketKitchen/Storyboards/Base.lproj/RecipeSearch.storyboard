@@ -376,6 +376,7 @@
                     <connections>
                         <outlet property="directionsButton" destination="lS5-Fz-VSb" id="uc9-ux-nCT"/>
                         <outlet property="ingredientTextLabel" destination="Mvb-O0-bAk" id="35y-oW-haP"/>
+                        <outlet property="recipeImage" destination="Vuz-hV-tFo" id="x9i-Ru-OGN"/>
                         <outlet property="recipeNameLabel" destination="tJd-FZ-UMJ" id="OeM-Zh-4Cn"/>
                     </connections>
                 </viewController>

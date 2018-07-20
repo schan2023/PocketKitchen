@@ -34,13 +34,10 @@ class DisplayRecipeViewController: UIViewController {
             ingredientTextLabel.text = recipe.ingredients
             ingredientTextLabel.layer.borderWidth = 0.25
             ingredientTextLabel.layer.borderColor = UIColor.black.cgColor
-            Alamofire.request(recipe.foodImage).responseImage { response in
-                if let image = response.result.value {
-                    print("image downloaded: \(image)")
-                    // cell.foodImage.image = image
-                    self.recipeImage?.image = image
-                }
+            if let image = recipe.recipeUIImage {
+                 recipeImage.image = image
             }
+            
         } else {
             recipeNameLabel.text = ""
             // ingredientsTextView.text = ""

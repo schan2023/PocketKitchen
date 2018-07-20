@@ -83,6 +83,7 @@ class RecipeListViewController: UITableViewController {
         cell.recipeCalorieLabel.text = calorieStr
         Alamofire.request(imageURL).responseImage { response in
             if let image = response.result.value {
+                self.displayRecipesList[indexPath.row].recipeUIImage = image
                 // print("image downloaded: \(image)")
                 cell.foodImage.image = image
             }
