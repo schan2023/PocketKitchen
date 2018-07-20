@@ -10,14 +10,14 @@ import Foundation
 
 struct RecipeModel {
     var name: String
-    var ingredients: [String]
-    var image: String
+    var ingredients: String
+    var foodImage: String
     var directions: String
     
-    init(name: String, ingredients: [String], image: String, directions: String) {
+    init(name: String, ingredients: String, foodImage: String, directions: String) {
         self.name = name
         self.ingredients = ingredients
-        self.image = image
+        self.foodImage = foodImage
         self.directions = directions
     }
 }

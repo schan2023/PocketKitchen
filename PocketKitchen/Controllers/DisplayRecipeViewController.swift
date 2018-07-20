@@ -26,10 +26,10 @@ class DisplayRecipeViewController: UIViewController {
         
         if let recipe = recipe {
             recipeNameLabel.text = recipe.name
-//            ingredientsTextView.text = recipe.ingredients
+            ingredientsTextView.text = recipe.ingredients
         } else {
             recipeNameLabel.text = ""
-//            ingredientsTextView.text = ""
+            ingredientsTextView.text = ""
         }
     }
 
