@@ -38,6 +38,7 @@ class RecipeSearchViewController: UIViewController {
         let ingredient = ingredientInputTextField.text
         ingredientArray.append(ingredient!)
         let ingredientTableView = ListIngredientsTableView()
+        textFieldShouldReturn(textField: ingredientInputTextField)
         ingredientInputTextField.text = ""
     }
     
@@ -72,6 +73,14 @@ extension RecipeSearchViewController: UITableViewDelegate, UITableViewDataSource
         print(ingredient)
         cell.ingredientLabel.text = ingredient
         return cell
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        //or
+        //self.view.endEditing(true)
+        return true
     }
     
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
