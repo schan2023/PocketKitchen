@@ -330,13 +330,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lS5-Fz-VSb">
-                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                <rect key="frame" x="50" y="558" width="275" height="50"/>
+                                <color key="backgroundColor" red="0.82745098039999998" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JC7-eg-DLK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="DIRECTIONS">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="directionsButtonPressed:" destination="ffP-TX-cqK" eventType="touchUpInside" id="VAu-Cx-aJU"/>
@@ -349,7 +350,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvb-O0-bAk">
-                                <rect key="frame" x="25" y="359.5" width="325" height="188.5"/>
+                                <rect key="frame" x="25" y="359.5" width="325" height="178.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -358,14 +359,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lep-Zc-IOz" firstAttribute="trailing" secondItem="Vuz-hV-tFo" secondAttribute="trailing" constant="25" id="Ach-WI-nvt"/>
-                            <constraint firstItem="lS5-Fz-VSb" firstAttribute="trailing" secondItem="Lep-Zc-IOz" secondAttribute="trailing" id="FIF-aU-pPX"/>
+                            <constraint firstItem="lS5-Fz-VSb" firstAttribute="trailing" secondItem="Lep-Zc-IOz" secondAttribute="trailing" constant="-50" id="FIF-aU-pPX"/>
                             <constraint firstItem="tJd-FZ-UMJ" firstAttribute="leading" secondItem="Lep-Zc-IOz" secondAttribute="leading" constant="20" id="Fpf-TL-479"/>
-                            <constraint firstItem="lS5-Fz-VSb" firstAttribute="leading" secondItem="Lep-Zc-IOz" secondAttribute="leading" id="Vps-We-aS1"/>
+                            <constraint firstItem="lS5-Fz-VSb" firstAttribute="leading" secondItem="Lep-Zc-IOz" secondAttribute="leading" constant="50" id="Vps-We-aS1"/>
                             <constraint firstItem="tJd-FZ-UMJ" firstAttribute="centerY" secondItem="UgS-Hs-Fo0" secondAttribute="centerY" id="WAb-ru-k6j"/>
                             <constraint firstItem="Mvb-O0-bAk" firstAttribute="top" secondItem="tJd-FZ-UMJ" secondAttribute="bottom" constant="15" id="XxK-Vy-Pv3"/>
                             <constraint firstItem="Mvb-O0-bAk" firstAttribute="leading" secondItem="Lep-Zc-IOz" secondAttribute="leading" constant="25" id="Z9b-fK-et7"/>
                             <constraint firstItem="Vuz-hV-tFo" firstAttribute="top" secondItem="Lep-Zc-IOz" secondAttribute="top" constant="25" id="f6t-do-xnw"/>
-                            <constraint firstItem="lS5-Fz-VSb" firstAttribute="bottom" secondItem="Lep-Zc-IOz" secondAttribute="bottom" id="hTl-Xl-sxV"/>
+                            <constraint firstItem="lS5-Fz-VSb" firstAttribute="bottom" secondItem="Lep-Zc-IOz" secondAttribute="bottom" constant="-10" id="hTl-Xl-sxV"/>
                             <constraint firstItem="Lep-Zc-IOz" firstAttribute="trailing" secondItem="tJd-FZ-UMJ" secondAttribute="trailing" constant="20" id="njb-tu-2cv"/>
                             <constraint firstItem="lS5-Fz-VSb" firstAttribute="top" secondItem="Mvb-O0-bAk" secondAttribute="bottom" constant="20" id="o4B-Xv-adq"/>
                             <constraint firstItem="Lep-Zc-IOz" firstAttribute="trailing" secondItem="Mvb-O0-bAk" secondAttribute="trailing" constant="25" id="rXK-fu-m6u"/>
