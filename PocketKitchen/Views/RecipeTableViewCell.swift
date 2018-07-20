@@ -25,11 +25,9 @@ class RecipeTableViewCell: UITableViewCell {
         if recipe?.isFavorited == "yes"{
             recipe?.isFavorited = nil
             print("swtiched to nil and then")
-            print(recipe)
         }else{
             recipe?.isFavorited = "yes"
             print("switched to yes")
-            print(recipe)
         }
     }
     @IBAction func likeButtonTapped(_ sender: Any) {

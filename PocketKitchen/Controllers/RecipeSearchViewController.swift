@@ -22,6 +22,7 @@ class RecipeSearchViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var IngredientsTableView: ListIngredientsTableView!
+    @IBOutlet weak var clearButton: UIButton!
     
     // IB Actions
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -43,10 +44,20 @@ class RecipeSearchViewController: UIViewController {
         print(ingredientArray)
         let ingredientTableView = ListIngredientsTableView()
         ingredientTableView.reloadData()
+        ingredientInputTextField.text = ""
     }
+    
+    @IBAction func clearButtonPressed(_ sender: Any) {
+        ingredientArray.removeAll()
+        print(ingredientArray)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     override func didReceiveMemoryWarning() {

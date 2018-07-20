@@ -26,9 +26,9 @@ class RecipeListViewController: UITableViewController {
         //getRecipeData(food: finalIngredientList, completionHandler: handleRecipeData)
     }
     
-    func getRecipeData(food: [String], completionHandler: @escaping ([Recipe]) -> Void) {
+    func getRecipeData(food: [String], completionHandler: @escaping ([RecipeModel]) -> Void) {
         
-        var recipeResults: [Recipe] = []
+        var recipeResults: [RecipeModel] = []
         let foodVar = food.joined(separator: "+")
         let apiToContact = "http://api.edamam.com/search?q=\(foodVar)&app_id=58964742&app_key=af5da5d1d5d239130b3a195bd566f6cd"
         Alamofire.request(apiToContact).validate().responseJSON() { response in
@@ -39,20 +39,19 @@ class RecipeListViewController: UITableViewController {
                     var index = 0
                     for food in json {
                         let recipeName = json["hits"][index]["recipe"]["label"].stringValue
-                        let ingredients = json["hits"][index]["recipe"]["ingredientLines"].stringValue
+                        let ingredients = json["hits"][index]["recipe"]["ingredientLines"].arrayObject
+                        var ingredientStr = ""
+                        for ingredient in ingredients! {
+                            ingredientStr += ingredient as! String + ", "
+                        }
+                        let image = json["hits"][index]["recipe"]["image"].stringValue
+                        let directions = json["hits"][index]["recipe"]["url"].stringValue
                         
-                        let recipe = Recipe()
-                        recipe.name = recipeName
-                        recipe.ingredients = ingredients
-//                        print(json["hits"][index]["recipe"]["label"].stringValue)
-//                        print(json["hits"][index]["recipe"]["ingredientLines"])
-//                        print(json["hits"][index]["recipe"]["url"].stringValue)
-//                        print(json["hits"][index]["recipe"]["image"].stringValue)
+                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions)
+                        
                         index = index + 1
-//                        print("index: \(index)")
                         
                         recipeResults.append(recipe)
-//                        print(recipeResults)
                     }
                     
                 }
