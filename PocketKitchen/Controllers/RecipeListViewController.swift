@@ -25,8 +25,9 @@ class RecipeListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("finalIngredientList: \(finalIngredientList)")
+        // print("finalIngredientList: \(finalIngredientList)")
         getRecipeData(food: finalIngredientList, completionHandler: handleRecipeData)
+
     }
     
     func getRecipeData(food: [String], completionHandler: @escaping ([RecipeModel]) -> Void) {
@@ -51,7 +52,7 @@ class RecipeListViewController: UITableViewController {
                         let image = json["hits"][index]["recipe"]["image"].stringValue
                         let directions = json["hits"][index]["recipe"]["url"].stringValue
                         let calories = json["hits"][index+1]["recipe"]["calories"].int32Value
-                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: Int(calories))
+                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: calories)
                         self.urlImageArray.append(imageURL)
                         index = index + 1
                         recipeResults.append(recipe)
@@ -82,7 +83,8 @@ class RecipeListViewController: UITableViewController {
         cell.recipeCalorieLabel.text = calorieStr
         Alamofire.request(imageURL).responseImage { response in
             if let image = response.result.value {
-                print("image downloaded: \(image)")
+                self.displayRecipesList[indexPath.row].recipeUIImage = image
+                // print("image downloaded: \(image)")
                 cell.foodImage.image = image
             }
         }

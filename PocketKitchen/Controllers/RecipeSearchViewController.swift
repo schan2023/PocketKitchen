@@ -31,24 +31,19 @@ class RecipeSearchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var destination = segue.destination as! RecipeListViewController
-        print("ingredientArray: \(ingredientArray)")
         destination.finalIngredientList = ingredientArray
-        print("vc.finalIngredientList: \(destination.finalIngredientList)")
-
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
         let ingredient = ingredientInputTextField.text
         ingredientArray.append(ingredient!)
-        print(ingredientArray)
         let ingredientTableView = ListIngredientsTableView()
-        ingredientTableView.reloadData()
         ingredientInputTextField.text = ""
     }
     
     @IBAction func clearButtonPressed(_ sender: Any) {
         ingredientArray.removeAll()
-        print(ingredientArray)
+        // print(ingredientArray)
     }
     
     
@@ -78,5 +73,12 @@ extension RecipeSearchViewController: UITableViewDelegate, UITableViewDataSource
         cell.ingredientLabel.text = ingredient
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            self.ingredientArray.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//    }
     
 }
