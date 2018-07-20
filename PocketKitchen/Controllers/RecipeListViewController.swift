@@ -51,7 +51,7 @@ class RecipeListViewController: UITableViewController {
                         }
                         let image = json["hits"][index]["recipe"]["image"].stringValue
                         let directions = json["hits"][index]["recipe"]["url"].stringValue
-                        let calories = json["hits"][index+1]["recipe"]["calories"].intValue
+                        let calories = json["hits"][index+1]["recipe"]["calories"].int32Value
                         let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: calories)
                         self.urlImageArray.append(imageURL)
                         index = index + 1
@@ -100,13 +100,30 @@ class RecipeListViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let recipe = displayRecipesList[indexPath.row]
             let destination = segue.destination as! DisplayRecipeViewController
-            destination.recipe = recipe //var note: Note?
+            destination.recipe = recipe
+            
+            //Saves core data model
+            createCoreDataObject(recipeModel: recipe)
             
             //Records if recipe was clicked
             //            CoreDataHelper.saveRecipe()
             //Check for duplicates in array before appending
             //            recipesClicked.append(recipe)
         }
+    }
+    
+    func createCoreDataObject(recipeModel: RecipeModel) -> Void {
+        
+        //Creates CoreDataModel
+        let object = CoreDataHelper.newRecipe()
+        object.name = recipeModel.name
+        object.ingredients = recipeModel.ingredients
+        object.calories = recipeModel.calories
+        object.isClicked = "yes"
+        print("object created \(object)")
+        
+        //Save CoreDataModel
+        CoreDataHelper.saveRecipe()
     }
 
 }

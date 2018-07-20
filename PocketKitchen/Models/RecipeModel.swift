@@ -13,9 +13,9 @@ struct RecipeModel {
     var ingredients: String
     var foodImage: String
     var directions: String
-    var calories: Int
+    var calories: Int32
     
-    init(name: String, ingredients: String, foodImage: String, directions: String, calories: Int) {
+    init(name: String, ingredients: String, foodImage: String, directions: String, calories: Int32) {
         self.name = name
         self.ingredients = ingredients
         self.foodImage = foodImage
