@@ -48,7 +48,6 @@ class RecipeListViewController: UITableViewController {
                         let directions = json["hits"][index]["recipe"]["url"].stringValue
                         
                         let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions)
-                        
                         index = index + 1
                         
                         recipeResults.append(recipe)

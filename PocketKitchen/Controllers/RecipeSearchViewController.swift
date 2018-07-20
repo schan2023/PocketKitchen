@@ -16,7 +16,6 @@ class RecipeSearchViewController: UIViewController {
         }
     }
 
-    
     // IB Outlets
     @IBOutlet weak var ingredientInputTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
