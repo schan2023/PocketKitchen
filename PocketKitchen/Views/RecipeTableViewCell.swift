@@ -24,14 +24,16 @@ class RecipeTableViewCell: UITableViewCell {
     func switchFavorite(){
         if recipe?.isFavorited == "yes"{
             recipe?.isFavorited = nil
-            print("swtiched to nil")
+            print("swtiched to nil and then")
+            print(recipe)
         }else{
             recipe?.isFavorited = "yes"
             print("switched to yes")
+            print(recipe)
         }
     }
     @IBAction func likeButtonTapped(_ sender: Any) {
-        print("like button tappedi in favorited list")
+        print("like button tapped in favorited list")
         switchFavorite()
         //in here, save to coredata
     }

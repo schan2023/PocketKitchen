@@ -13,7 +13,6 @@ class ListIngredientsTableView: UITableView {
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //    }
-    
 
     
 }

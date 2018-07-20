@@ -54,7 +54,7 @@ struct CoreDataHelper {
                 fetchRequest.predicate = NSPredicate(format: "isFavorited = %@", "yes")
             }
             let results = try context.fetch(fetchRequest)
-            
+            print("retrieveRecipes - printing results")
             print(results)
             return results
         }
