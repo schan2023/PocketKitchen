@@ -44,17 +44,17 @@ class RecipeListViewController: UITableViewController {
                     for food in json {
                         let recipeName = json["hits"][index]["recipe"]["label"].stringValue
                         let ingredients = json["hits"][index]["recipe"]["ingredientLines"].arrayObject
+                        let imageURL = json["hits"][index]["recipe"]["image"].stringValue
                         var ingredientStr = ""
                         for ingredient in ingredients! {
                             ingredientStr += ingredient as! String + ", "
                         }
                         let image = json["hits"][index]["recipe"]["image"].stringValue
                         let directions = json["hits"][index]["recipe"]["url"].stringValue
-                        
-                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions)
-
+                        let calories = json["hits"][index+1]["recipe"]["calories"].intValue
+                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: calories)
+                        self.urlImageArray.append(imageURL)
                         index = index + 1
-                        
                         recipeResults.append(recipe)
                     }
                 }
@@ -68,8 +68,6 @@ class RecipeListViewController: UITableViewController {
     
     func handleRecipeModelData(recipesList: [RecipeModel]) -> Void {
         displayRecipesList = recipesList
-        print(urlImageArray)
-        //print(displayRecipesList)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int ) -> Int {
@@ -81,8 +79,8 @@ class RecipeListViewController: UITableViewController {
         let recipe = displayRecipesList[indexPath.row]
         let imageURL = urlImageArray[indexPath.row]
         cell.recipeTitleLabel.text = recipe.name
-        
-        // "https://httpbin.org/image/png"
+        let calorieStr = String(recipe.calories) + " calories"
+        cell.recipeCalorieLabel.text = calorieStr
         Alamofire.request(imageURL).responseImage { response in
             if let image = response.result.value {
                 print("image downloaded: \(image)")
