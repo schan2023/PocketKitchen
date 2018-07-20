@@ -11,7 +11,8 @@ import UIKit
 
 class DisplayRecipeViewController: UIViewController {
     
-    var recipe: RecipeModel?
+//    var recipe: RecipeModel?
+    var recipe: Recipe?
     
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
@@ -23,7 +24,6 @@ class DisplayRecipeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         if let recipe = recipe {
             recipeNameLabel.text = recipe.name
             ingredientsTextView?.text = recipe.ingredients

@@ -97,33 +97,35 @@ class RecipeListViewController: UITableViewController {
             
             print("Going into displayRecipe segue")
             
+            
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let recipe = displayRecipesList[indexPath.row]
+            
+            let recipeCoreData = createCoreDataObject(recipeModel: recipe)
+            
             let destination = segue.destination as! DisplayRecipeViewController
-            destination.recipe = recipe
+            destination.recipe = recipeCoreData
             
-            //Saves core data model
-            createCoreDataObject(recipeModel: recipe)
-            
-            //Records if recipe was clicked
-            //            CoreDataHelper.saveRecipe()
-            //Check for duplicates in array before appending
-            //            recipesClicked.append(recipe)
+//            createCoreDataObject(recipeModel: recipe)
+
         }
     }
     
-    func createCoreDataObject(recipeModel: RecipeModel) -> Void {
+    func createCoreDataObject(recipeModel: RecipeModel) -> Recipe {
         
         //Creates CoreDataModel
         let object = CoreDataHelper.newRecipe()
-        object.name = recipeModel.name
-        object.ingredients = recipeModel.ingredients
-        object.calories = recipeModel.calories
-        object.isClicked = "yes"
+        object.setValue(recipeModel.name, forKey: "name")
+        object.setValue(recipeModel.ingredients, forKey: "ingredients")
+        object.setValue(recipeModel.directions, forKey: "directions")
+        object.setValue(recipeModel.calories, forKey: "calories")
+        object.setValue("yes", forKey: "isClicked")
         print("object created \(object)")
         
         //Save CoreDataModel
         CoreDataHelper.saveRecipe()
+        
+        return object
     }
 
 }

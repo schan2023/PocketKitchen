@@ -23,7 +23,8 @@ struct CoreDataHelper {
     }()
     
     static func newRecipe() -> Recipe {
-        let recipe = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: context) as! Recipe
+        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: context)
+        let recipe = NSManagedObject(entity: entity!, insertInto: context) as! Recipe
         
         return recipe
     }
