@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class HistoryViewController: UITableViewController {
     
@@ -17,26 +18,10 @@ class HistoryViewController: UITableViewController {
         }
     }
     
-    func testFunc() {
-        let recipe1 = CoreDataHelper.newRecipe()
-        recipe1.name = "Spinach Cheddar Soup"
-        recipe1.ingredients = "1.) Spinach 2.) Cheddar 3.) Broth"
-        
-        let recipe2 = CoreDataHelper.newRecipe()
-        recipe2.name = "Banh Mi"
-        recipe2.ingredients = "1.) Bread 2.) carrots"
-        
-        
-        recipesClicked.append(recipe1)
-        recipesClicked.append(recipe2)
-        
-        print(recipesClicked)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        testFunc()
-//        recipesClicked = CoreDataHelper.retrieveRecipes()
+        recipesClicked = CoreDataHelper.retrieveRecipes(type: "history")
+        print(recipesClicked)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int ) -> Int {
@@ -47,27 +32,31 @@ class HistoryViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         
         let recipe = recipesClicked[indexPath.row]
+        let imageURL = recipe.imageUrl
         cell.recipeTitleLabel.text = recipe.name
-        
-//        cell.recipeTitleLabel.text = "Recipe 1"
-//        cell.recipeDescriptionLabel.text = "This is the first recipe"
+        let calorieStr = String(recipe.calories) + " calories"
+        cell.recipeDescriptionLabel.text = calorieStr
+        Alamofire.request(imageURL!).responseImage { response in
+            if let image = response.result.value {
+                cell.foodImage.image = image
+            }
+        }
         
         return cell
+//        let recipe = recipesClicked[indexPath.row]
+//        cell.recipeTitleLabel.text = recipe.name
+//
+//        return cell
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let identifier = segue.identifier else { return }
-//        if identifier == "displayRecipe" {
-//            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-//            let recipe = recipesClicked[indexPath.row]
-//            let destination = segue.destination as! DisplayRecipeViewController
-//            destination.recipe = recipe //var note: Note?
-//            
-//            //Records if recipe was clicked
-////            CoreDataHelper.saveRecipe()
-//            //Check for duplicates in array before appending
-////            recipesClicked.append(recipe)
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == "displayRecipe" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let recipe = recipesClicked[indexPath.row]
+            let destination = segue.destination as! DisplayRecipeViewController
+            destination.recipe = recipe
+        }
+    }
     
 }

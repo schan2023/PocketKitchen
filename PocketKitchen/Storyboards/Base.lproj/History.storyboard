@@ -90,6 +90,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="foodImage" destination="TSd-NZ-N66" id="nK5-3G-7Vm"/>
                                     <outlet property="recipeDescriptionLabel" destination="kHa-f5-s2h" id="bEX-t2-bUa"/>
                                     <outlet property="recipeTitleLabel" destination="T7H-HR-bK8" id="XBz-Ah-LNE"/>
                                     <segue destination="QJt-vj-kyK" kind="show" identifier="displayRecipe" id="utp-Hh-jbB"/>
@@ -124,12 +125,16 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpb-kV-NmY">
                                 <rect key="frame" x="0.0" y="510" width="375" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IRg-fG-lUj"/>
                                 </constraints>
-                                <state key="normal" title="Directions"/>
+                                <state key="normal" title="HOW TO MAKE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efV-TY-FTH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efV-TY-FTH">
                                 <rect key="frame" x="25" y="279.5" width="325" height="210"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -164,6 +169,8 @@
                         <viewLayoutGuide key="safeArea" id="aMw-f7-UAz"/>
                     </view>
                     <connections>
+                        <outlet property="directionsButton" destination="Jpb-kV-NmY" id="pgC-Y9-UZ0"/>
+                        <outlet property="ingredientTextLabel" destination="efV-TY-FTH" id="9NG-Ub-UHF"/>
                         <outlet property="recipeImage" destination="gcY-4M-nhG" id="r4K-0K-V6b"/>
                         <outlet property="recipeNameLabel" destination="hKG-Vx-8yQ" id="8ZB-AV-7dW"/>
                     </connections>

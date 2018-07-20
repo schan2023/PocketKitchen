@@ -13,7 +13,8 @@ import Alamofire
 
 class DisplayRecipeViewController: UIViewController {
     
-    var recipe: RecipeModel?
+//    var recipe: RecipeModel?
+    var recipe: Recipe?
     
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
@@ -28,21 +29,19 @@ class DisplayRecipeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if var recipe = recipe {
+        if let recipe = recipe {
             recipeNameLabel.text = recipe.name
-            //print("recipes.ingredients: \(recipe.ingredients)")
-            // ingredientsTextView?.text = recipe.ingredients
             ingredientTextLabel.text = recipe.ingredients
             ingredientTextLabel.layer.borderWidth = 0.25
             ingredientTextLabel.layer.borderColor = UIColor.black.cgColor
-            if let image = recipe.recipeUIImage {
-                 recipeImage.image = image
+            Alamofire.request(recipe.imageUrl!).responseImage { response in
+                if let image = response.result.value {
+                   self.recipeImage.image = image
+                }
             }
             
         } else {
             recipeNameLabel.text = ""
-            // ingredientsTextView.text = ""
         }
     }
     
