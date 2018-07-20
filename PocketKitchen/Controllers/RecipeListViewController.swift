@@ -25,7 +25,7 @@ class RecipeListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("finalIngredientList: \(finalIngredientList)")
+        // print("finalIngredientList: \(finalIngredientList)")
         getRecipeData(food: finalIngredientList, completionHandler: handleRecipeModelData)
     }
     
@@ -83,7 +83,7 @@ class RecipeListViewController: UITableViewController {
         cell.recipeCalorieLabel.text = calorieStr
         Alamofire.request(imageURL).responseImage { response in
             if let image = response.result.value {
-                print("image downloaded: \(image)")
+                // print("image downloaded: \(image)")
                 cell.foodImage.image = image
             }
         }
