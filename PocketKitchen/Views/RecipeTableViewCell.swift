@@ -11,35 +11,36 @@ import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
     
-    var recipe: Recipe? = nil {
+    var recipeCoreData: Recipe?
+    var recipe: RecipeModel? = nil {
         didSet {
             recipeTitleLabel.text = recipe?.name
-            recipeDescriptionLabel.text = recipe?.ingredients
+            //recipeDescriptionLabel.text = recipe?.ingredients
+        }
+    }
+    func switchFavorite(){
+        if recipeCoreData?.isFavorited == "yes"{
+            recipeCoreData?.isFavorited = nil
+            print("swtiched to nil and then")
+        }else{
+            recipeCoreData?.isFavorited = "yes"
+            print("switched to yes")
         }
     }
     
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var recipeDescriptionLabel: UILabel!
 
-    func switchFavorite(){
-        if recipe?.isFavorited == "yes"{
-            recipe?.isFavorited = nil
-            print("swtiched to nil and then")
-        }else{
-            recipe?.isFavorited = "yes"
-            print("switched to yes")
-        }
-    }
     @IBAction func likeButtonTapped(_ sender: Any) {
         print("like button tapped in favorited list")
         switchFavorite()
-        //in here, save to coredata
     }
     
     @IBAction func likeButtonTappedHistory(_ sender: Any) {
         print("like button tapped in history")
         switchFavorite()
     }
+    
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var recipeCalorieLabel: UILabel!
     

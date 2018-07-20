@@ -16,9 +16,8 @@ class RecipeListViewController: UITableViewController {
     
     @IBOutlet var recipeTableView: UITableView!
     var urlImageArray = [String]()
-    
     var finalIngredientList = [String]()
-    var displayRecipesList = [Recipe]() {
+    var displayRecipesList = [RecipeModel]() {
         didSet {
             tableView.reloadData()
         }
@@ -27,7 +26,7 @@ class RecipeListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("finalIngredientList: \(finalIngredientList)")
-        //getRecipeData(food: finalIngredientList, completionHandler: handleRecipeData)
+        getRecipeData(food: finalIngredientList, completionHandler: handleRecipeData)
     }
     
     func getRecipeData(food: [String], completionHandler: @escaping ([RecipeModel]) -> Void) {
@@ -51,8 +50,8 @@ class RecipeListViewController: UITableViewController {
                         }
                         let image = json["hits"][index]["recipe"]["image"].stringValue
                         let directions = json["hits"][index]["recipe"]["url"].stringValue
-                        let calories = json["hits"][index+1]["recipe"]["calories"].intValue
-                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: calories)
+                        let calories = json["hits"][index+1]["recipe"]["calories"].int32Value
+                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions, calories: Int(calories))
                         self.urlImageArray.append(imageURL)
                         index = index + 1
                         recipeResults.append(recipe)
@@ -66,7 +65,7 @@ class RecipeListViewController: UITableViewController {
         }
     }
     
-    func handleRecipeData(recipesList: [Recipe]) -> Void {
+    func handleRecipeData(recipesList: [RecipeModel]) -> Void {
         displayRecipesList = recipesList
     }
     
@@ -87,26 +86,54 @@ class RecipeListViewController: UITableViewController {
                 cell.foodImage.image = image
             }
         }
-        
         return cell
     }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let identifier = segue.identifier else { return }
-//        if identifier == "displayRecipe" {
-//
-//            print("Going into displayRecipe segue")
-//
-//            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-//            let recipe = displayRecipesList[indexPath.row]
-//            let destination = segue.destination as! DisplayRecipeViewController
-//            destination.recipe = recipe //var note: Note?
-//            
-//            //Records if recipe was clicked
-//            //            CoreDataHelper.saveRecipe()
-//            //Check for duplicates in array before appending
-//            //            recipesClicked.append(recipe)
-//        }
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == "displayRecipe" {
+
+            print("Going into displayRecipe from favorites segue")
+
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let recipe = displayRecipesList[indexPath.row]
+            let destination = segue.destination as! DisplayRecipeViewController
+            //destination.recipe = newRecipe //var note: Note?
+            //createCoreDataObject(recipeModel: recipe)
+            
+            let object = CoreDataHelper.newRecipe()
+            print("needs to create new core date helper object")
+            object.name = recipe.name
+            object.ingredients = recipe.ingredients
+            object.calories = Int32(recipe.calories)
+            object.isClicked = "yes"
+            //Save CoreDataModel
+            print(object.name)
+            CoreDataHelper.saveRecipe()
+            destination.recipe = object
+            print( destination.recipe)
+            
+            
+            //Creates CoreDataModel
+            //let object = createCoreDataObject(recipe: RecipeModel)
+            //destination.recipe = object
+
+        }
+    }
+    
+    func createCoreDataObject(recipe: RecipeModel) -> Recipe{
+        //Creates CoreDataModel
+        let object = CoreDataHelper.newRecipe()
+        object.name = recipe.name
+        object.ingredients = recipe.ingredients
+        object.calories = Int32(recipe.calories)
+        object.isClicked = "yes"
+         print("object created \(object)")
+        //Save CoreDataModel
+        CoreDataHelper.saveRecipe()
+        return object
+        
+    }
 
 }

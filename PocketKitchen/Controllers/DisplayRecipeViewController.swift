@@ -11,6 +11,7 @@ import UIKit
 
 class DisplayRecipeViewController: UIViewController {
     
+    //var recipe: RecipeModel?
     var recipe: Recipe?
     
     @IBOutlet weak var recipeNameLabel: UILabel!

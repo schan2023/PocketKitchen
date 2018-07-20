@@ -18,7 +18,7 @@ class FavoritesViewController: UITableViewController {
     }
     
     func callingCoreData(){
-        let favoriteType = "yes"
+        let favoriteType = "favorites"
         favoritedRecipes = CoreDataHelper.retrieveRecipes(type: favoriteType)
     }
     override func viewDidLoad() {
@@ -40,7 +40,8 @@ class FavoritesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         let recipe = favoritedRecipes[indexPath.row]
-        cell.recipe = recipe
+        // cannot assign value of recipe to recipemodel
+        //cell.recipe = recipe
         return cell
     }
 
@@ -51,11 +52,7 @@ class FavoritesViewController: UITableViewController {
             let recipe = favoritedRecipes[indexPath.row]
             let destination = segue.destination as! DisplayRecipeViewController
             destination.recipe = recipe //var note: Note?
-
-            //Records if recipe was clicked
-            //            CoreDataHelper.saveRecipe()
-            //Check for duplicates in array before appending
-            //            recipesClicked.append(recipe)
+            
         }
     }
 
