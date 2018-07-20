@@ -14,7 +14,7 @@ struct RecipeModel {
     var foodImage: String
     var directions: String
     
-    init(name: String, ingredients: [String], foodImage: String, directions: String) {
+    init(name: String, ingredients: String, foodImage: String, directions: String) {
         self.name = name
         self.ingredients = ingredients
         self.foodImage = foodImage

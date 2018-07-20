@@ -43,30 +43,20 @@ class RecipeListViewController: UITableViewController {
                     var index = 0
                     for food in json {
                         let recipeName = json["hits"][index]["recipe"]["label"].stringValue
-                        let ingredients = json["hits"][index]["recipe"]["ingredientLines"].stringValue
-                        let directionsURL = json["hits"][index]["recipe"]["url"].stringValue
-                        let imageURL = json["hits"][index]["recipe"]["image"].stringValue
-                        self.urlImageArray.append(imageURL)
-                        //let recipe = RecipeModel(name: recipeName, ingredients: [ingredients], foodImage: String, directions: String)
-                        let recipe = RecipeModel(name: recipeName, ingredients: [ingredients], foodImage: imageURL, directions: directionsURL)
-//                        print(json["hits"][index]["recipe"]["label"].stringValue)
-//                        print(json["hits"][index]["recipe"]["ingredientLines"])
-//                        print(json["hits"][index]["recipe"]["url"].stringValue)
-//                        print(json["hits"][index]["recipe"]["image"].stringValue)
+                        let ingredients = json["hits"][index]["recipe"]["ingredientLines"].arrayObject
+                        var ingredientStr = ""
+                        for ingredient in ingredients! {
+                            ingredientStr += ingredient as! String + ", "
+                        }
+                        let image = json["hits"][index]["recipe"]["image"].stringValue
+                        let directions = json["hits"][index]["recipe"]["url"].stringValue
+                        
+                        let recipe = RecipeModel(name: recipeName, ingredients: ingredientStr, foodImage: image, directions: directions)
+
                         index = index + 1
-//                        print("index: \(index)")
                         
                         recipeResults.append(recipe)
-//                        print(recipeResults)
-                        
-//                        let imagesArray: NSArray = json as! NSArray
-//
-//                        for i in 0..<imagesArray.count {
-//                            self.displayRecipesList.append(RecipeModel(
-//                                name: (imagesArray[i] as AnyObject).value(forKey: "name") as! String, ingredients: (imagesArray[i] as AnyObject).value(forKey: "ingredients") as! [String], foodImage: (imagesArray[i] as AnyObject).value(forKey: "foodImage") as! String, directions: (imagesArray[i] as AnyObject).value(forKey: "name") as! String))
-//                        }
                     }
-//                    self.recipeTableView.reloadData()
                 }
             case .failure(let error):
                 print(error)
