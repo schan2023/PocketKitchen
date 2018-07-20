@@ -9,8 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-<<<<<<< HEAD
-=======
+
         <!--View Controller-->
         <scene sceneID="v4u-hI-rSu">
             <objects>
@@ -38,7 +37,7 @@
             </objects>
             <point key="canvasLocation" x="-776" y="830"/>
         </scene>
->>>>>>> master
+
         <!--Tab Bar Controller-->
         <scene sceneID="bV8-qq-t0Y">
             <objects>
