@@ -9,8 +9,12 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AlamofireImage
 
 class RecipeListViewController: UITableViewController {
+    
+    @IBOutlet var recipeTableView: UITableView!
+    var urlImageArray = [String]()
     
     var finalIngredientList = [String]()
     var displayRecipesList = [RecipeModel]() {
@@ -40,8 +44,11 @@ class RecipeListViewController: UITableViewController {
                     for food in json {
                         let recipeName = json["hits"][index]["recipe"]["label"].stringValue
                         let ingredients = json["hits"][index]["recipe"]["ingredientLines"].stringValue
-                        let recipe = RecipeModel(name: recipeName, ingredients: [ingredients])
-                        
+                        let directionsURL = json["hits"][index]["recipe"]["url"].stringValue
+                        let imageURL = json["hits"][index]["recipe"]["image"].stringValue
+                        self.urlImageArray.append(imageURL)
+                        //let recipe = RecipeModel(name: recipeName, ingredients: [ingredients], foodImage: String, directions: String)
+                        let recipe = RecipeModel(name: recipeName, ingredients: [ingredients], foodImage: imageURL, directions: directionsURL)
 //                        print(json["hits"][index]["recipe"]["label"].stringValue)
 //                        print(json["hits"][index]["recipe"]["ingredientLines"])
 //                        print(json["hits"][index]["recipe"]["url"].stringValue)
@@ -51,8 +58,15 @@ class RecipeListViewController: UITableViewController {
                         
                         recipeResults.append(recipe)
 //                        print(recipeResults)
+                        
+//                        let imagesArray: NSArray = json as! NSArray
+//
+//                        for i in 0..<imagesArray.count {
+//                            self.displayRecipesList.append(RecipeModel(
+//                                name: (imagesArray[i] as AnyObject).value(forKey: "name") as! String, ingredients: (imagesArray[i] as AnyObject).value(forKey: "ingredients") as! [String], foodImage: (imagesArray[i] as AnyObject).value(forKey: "foodImage") as! String, directions: (imagesArray[i] as AnyObject).value(forKey: "name") as! String))
+//                        }
                     }
-                    
+//                    self.recipeTableView.reloadData()
                 }
             case .failure(let error):
                 print(error)
@@ -64,6 +78,7 @@ class RecipeListViewController: UITableViewController {
     
     func handleRecipeModelData(recipesList: [RecipeModel]) -> Void {
         displayRecipesList = recipesList
+        print(urlImageArray)
         //print(displayRecipesList)
     }
     
@@ -73,9 +88,17 @@ class RecipeListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTableViewCell", for: indexPath) as! RecipeTableViewCell
-        
         let recipe = displayRecipesList[indexPath.row]
+        let imageURL = urlImageArray[indexPath.row]
         cell.recipeTitleLabel.text = recipe.name
+        
+        // "https://httpbin.org/image/png"
+        Alamofire.request(imageURL).responseImage { response in
+            if let image = response.result.value {
+                print("image downloaded: \(image)")
+                cell.foodImage.image = image
+            }
+        }
         
         return cell
     }
