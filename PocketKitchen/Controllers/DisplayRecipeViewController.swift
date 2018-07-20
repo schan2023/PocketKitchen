@@ -23,6 +23,8 @@ class DisplayRecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        directionsButton.layer.cornerRadius = 10
+        directionsButton.layer.borderWidth = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +32,7 @@ class DisplayRecipeViewController: UIViewController {
         
         if let recipe = recipe {
             recipeNameLabel.text = recipe.name
-            print("recipes.ingredients: \(recipe.ingredients)")
+            //print("recipes.ingredients: \(recipe.ingredients)")
             // ingredientsTextView?.text = recipe.ingredients
             ingredientTextLabel.text = recipe.ingredients
             ingredientTextLabel.layer.borderWidth = 0.25
