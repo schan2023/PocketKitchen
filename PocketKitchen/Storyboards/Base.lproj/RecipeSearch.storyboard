@@ -216,7 +216,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-bE-Sdp">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-bE-Sdp">
                                             <rect key="frame" x="15" y="15" width="140" height="140"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="140" id="Ie7-wO-fVO"/>
@@ -343,7 +343,7 @@
                                     <action selector="directionsButtonPressed:" destination="ffP-TX-cqK" eventType="touchUpInside" id="VAu-Cx-aJU"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vuz-hV-tFo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vuz-hV-tFo">
                                 <rect key="frame" x="25" y="89" width="325" height="188"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="188" id="HTO-NB-S7C"/>
